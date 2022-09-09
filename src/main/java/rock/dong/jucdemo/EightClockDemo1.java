@@ -6,6 +6,7 @@ public class EightClockDemo1 {
     public static void main(String[] args) {
         //synchronized locks the object who invoke the methods, so as the sendmessage and call are invoked by the same object phone, as the
         //sendmessage is the first one to get synchronized(first to get the lock), it'll always execute first.
+        //if there are two objects, execution sequence depends on who will run first(no TimeUnit.sleep() will be the first).
         phone phone = new phone();
         new Thread(() -> {
             try {
