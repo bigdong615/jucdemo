@@ -15,8 +15,9 @@ public class ConcurrentModificationExceptionDemo01 {
         //solution2 - List objects = Collections.synchronizedList(new ArrayList<>());
         //solution3 - List <Object> objects = new CopyOnWriteArrayList<>();
         //ArrayList arrayList = new ArrayList();
-        List <Object> objects = new CopyOnWriteArrayList<>(); //copyonwrite is an optimized strategy
+        //copyonwrite is an optimized strategy
         //set is the same as list, but map is different, we might use concurrentHashMap
+        List <Object> objects = new CopyOnWriteArrayList<>();
 ;        for (int i = 0; i < 10 ; i++) {
             new Thread(()->{
                 objects.add(UUID.randomUUID().toString().substring(0,5));
